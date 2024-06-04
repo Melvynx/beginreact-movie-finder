@@ -1,5 +1,7 @@
+import useSWR from "swr";
+
 export const useMovieQuery = (search) => {
-  return useSWR(search, async () => {
+  return useSWR(`movie-finder-${search}`, async () => {
     if (search.length < 3) {
       throw new Error("Please enter at least 3 characters");
     }
