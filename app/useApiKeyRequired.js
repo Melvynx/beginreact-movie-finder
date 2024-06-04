@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const useApiKeyRequired = () => {
-  const [apiKey, setApiKey] = useState("");
-
   useEffect(() => {
-    if (apiKey) return;
-
     const storedApiKey = localStorage.getItem("omdbApiKey");
 
     if (storedApiKey) {
-      setApiKey(storedApiKey);
       return;
     }
 
@@ -18,7 +13,5 @@ export const useApiKeyRequired = () => {
 
     setApiKey(text);
     localStorage.setItem("omdbApiKey", text);
-  }, [apiKey, setApiKey]);
-
-  return apiKey;
+  }, []);
 };

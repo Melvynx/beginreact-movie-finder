@@ -2,9 +2,9 @@
 "use client";
 
 import { Search } from "lucide-react";
+import { useApiKeyRequired } from "./useApiKeyRequired";
 import { useDebounceValue } from "./useDebounceValue";
 import { useMovieQuery } from "./useMovieQuery";
-import { useApiKeyRequired } from "./useOmdbApiKeyRequired";
 import { useQueryState } from "./useQueryState";
 
 export default function Home() {
