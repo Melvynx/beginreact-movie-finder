@@ -9,7 +9,7 @@ import { useQueryState } from "./useQueryState";
 
 export default function Home() {
   const [search, setSearch] = useQueryState("search", "");
-  const apiKey = useApiKeyRequired();
+  useApiKeyRequired();
   const debounceSearch = useDebounceValue(search, 500);
   const { data, error, isLoading } = useMovieQuery(debounceSearch);
 
