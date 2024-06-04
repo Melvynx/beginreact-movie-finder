@@ -30,7 +30,6 @@ export default function Home() {
         </label>
       </fieldset>
       {error && <div>Error: {error.message}</div>}
-      {search.length < 3 && <div>Please enter at least 3 characters</div>}
       {data?.Response === "False" && (
         <p>
           No results found for <span className="font-bold">"{search}"</span>
